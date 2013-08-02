@@ -1,0 +1,33 @@
+.tPageBody{
+	width:100%;
+	height:100%;
+	position:relative;
+	margin:10px auto;
+}
+.tPageBody table{
+	border:1px solid #cccccc;
+	border-bottom:0;
+	width:98%;
+	margin-left:20px;
+	margin-right:20px;
+	padding:0;
+}
+.tPageBody table tr{
+	width:100%;
+	padding:0;
+	margin:0;
+	border:1px solid #cccccc;
+}
+.tPageBody table tr td{
+	width:20%;
+	height:40px;
+	border:0;
+	padding:0 0 0 5px;
+	margin:0;
+	border-right:1px solid #cccccc;
+	border-bottom:1px solid #cccccc;
+	
+}
+.teven{
+	background:url(../images/even.png) repeat-x;
+}

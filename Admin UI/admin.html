@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">  
+<html>  
+<head>  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="website content monitoring, web content testing, web content checker"/>
+<meta name="description" content="Recommend web content testing tool, focus on web content accuracy. We can manage requests with a friendly UI, auto monitor web page content as requests. And we can view page history through time-line." />
+<title>Wartisan admin UI</title>
+<link href="css/adminStyle.css" type="text/css" rel="stylesheet" />
+<script src="js/jquery-1.9.1.js"></script>
+<!--
+<script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery.colorbox.js"></script>
+<script src="js/index.js"></script>
+--> 
+  <script>
+    var arrJson=[  
+        {'ID':'1','Operate':'new','Text':'wartisan','AltText':'web wartisan','link':'www.baidu.com'},{'ID':'2','Operate':'update','Text':'wartisan','AltText':'web wartisan','link':'www.baidu.com'},  
+        {'ID':'3','Operate':'new','Text':'wartisan','AltText':'web wartisan','link':'www.baidu.com'},{'ID':'4','Operate':'update','Text':'wartisan','AltText':'web wartisan','link':'www.baidu.com'},  
+        {'ID':'5','Operate':'new','Text':'wartisan','AltText':'web wartisan','link':'www.baidu.com'},{'ID':'6','Operate':'update','Text':'wartisan','AltText':'web wartisan','link':'www.baidu.com'},  
+        {'ID':'7','Operate':'new','Text':'wartisan','AltText':'web wartisan','link':'www.baidu.com'},{'ID':'8','Operate':'delete','Text':'wartisan','AltText':'web wartisan','link':'www.baidu.com'},  
+        {'ID':'9','Operate':'new','Text':'wartisan','AltText':'web wartisan','link':'www.baidu.com'},{'ID':'10','Operate':'delete','Text':'wartisan','AltText':'web wartisan','link':'www.baidu.com'}  
+    ];  
+    function creatMapByID(arrJson){  
+        var IDMap={};  
+        var len = arrJson.length;  
+        for(var i=0;i<len;i++){  
+          
+            if(IDMap[arrJson[i].ID] == undefined){  
+                var list = [];  
+                list.push(arrJson[i]);  
+                IDMap[arrJson[i].ID] = list;  
+            }else{  
+                IDMap[arrJson[i].ID].push(arrJson[i]);  
+            }  
+              
+        }  
+        var str="<div class='tPageBody'><table border='1' cellpadding='0' cellspacing='0'><tr style='font-size:18px;font-weight:bold;height:40px;background:url(images/title_bg.png) repeat-x;'><td style='text-align:center;' width='20%'>ID</td><td style='text-align:center;' width='20%'>Operate</td><td style='text-align:center;' width='20%'>Text</td><td  style='text-align:center;' width='20%'>AltText</td><td style='text-align:center;border-right:0;' width='20%'>Link</td></tr>";  
+        for(var ID in IDMap){  
+            var stu = IDMap[ID];  
+          //  str+="<tr><td rowspan='"+stu.length+"'>"+ID+"</td>";  
+		  str+="<tr><td>"+ID+"</td>";
+            for(var i = 0;i < stu.length;i++){  
+                    str+="<td>"+stu[i].Operate+"</td><td>"+stu[i].Text + "</td><td>" + stu[i].AltText + "</td><td style='border-right:0;'>" + stu[i].link + "</td></tr></tr>";
+            }   
+        }  
+        str+="</table></div>";  
+        $("body").html(str);
+		$(".tPageBody table tr:even").addClass("teven");
+    }  
+  </script>  
+ </head >  
+  
+ <body onload="creatMapByID(arrJson);"> 
+ </body>  
+</html>  
