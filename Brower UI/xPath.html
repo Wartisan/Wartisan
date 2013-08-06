@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<link rel="icon" href="images/logo.gif" type="image/gif" /><!--给标题栏加小图标-->
+
+<meta name="keywords" content="website content monitoring, web content testing, web content checker"/>
+
+<meta name="description" content="Recommend web content testing tool, focus on web content accuracy. We can manage requests with a friendly UI, auto monitor web page content as requests. And we can view page history through time-line." />
+
+<title>Web Artisan</title>
+
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" href="css/jquery-ui-1.10.3.custom.min.css">
+
+<link rel="stylesheet" href="css/colorbox.css" />
+
+<script src="js/jquery-1.9.1.js"></script>
+
+<script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+
+<script src="js/jquery-1.9.1.js"></script>
+
+<script src="js/jquery.colorbox.js"></script>
+
+<script src="js/index.js"></script>
+
+<script type="text/javascript">
+
+//check the status if it can be edited.
+/*function checkStatus(){
+	$("#checkStatus").click(function(e){
+		if($("#checkStatus").hasClass("tuncheck")){
+			$("#checkStatus").removeClass("tuncheck");
+			$("#checkStatus").addClass("tchecked");
+		}else{
+			$("#checkStatus").removeClass("tchecked");
+			$("#checkStatus").addClass("tuncheck");
+		}
+	});
+}*/
+
+function readXPath(element) {
+  /*  if (element.id!==""){//判断id属性，如果这个元素有id，则显 示//*[@id="xPath"]  形式内容
+        return '//*[@id=\"'+element.id+'\"]';
+    }
+
+    if (element.getAttribute("class")!==null){ //判断class属性，如果这个元素有class，则显 示//*[@class="xPath"]  形式内容
+        return '//*[@class=\"'+element.getAttribute("class")+'\"]';
+    }   */
+    //因为Xpath属性不止id和class，所以还可以更具class形式添加属性
+
+    //这里需要需要主要字符串转译问题，可参考js 动态生成html时字符串和变量转译（注意引号的作用）
+
+
+    if (element==document.body){//递归到body处，结束递归
+        return '/HTML/'+ element.tagName.toUpperCase();
+    }
+
+
+    var ix= 0,//在nodelist中的位置，且每次点击初始化
+          siblings= element.parentNode.childNodes;//同级的子元素
+
+    for (var i= 0,l=siblings.length; i<l; i++) {
+        var sibling = siblings[i];
+        if (sibling==element){//如果这个元素是siblings数组中的元素，则执行递归操作
+            return arguments.callee(element.parentNode)+'/'+element.tagName+((ix+1)==1?'':'['+(ix+1)+']');//ix+1是因为xpath是从1开始计数的，element.tagName+((ix+1)==1?'':'['+(ix+1)+']')三元运算符，如果是第一个则不显示，从2开始显示
+        }else if(sibling.nodeType==1 && sibling.tagName==element.tagName){//如果不符合，判断是否是element元素，并且是否是相同元素，如果是相同的就开始累加
+            ix++;
+        }
+    }
+};
+
+
+function checkStatus(){
+		var tStatue = false;
+		if($("#checkStatus").hasClass("tuncheck")){
+			$("#checkStatus").removeClass("tuncheck");
+			$("#checkStatus").addClass("tchecked");
+			tStatue = true;
+		}else{
+			//alert("false");
+			$("#checkStatus").removeClass("tchecked");
+			$("#checkStatus").addClass("tuncheck");
+			tStatue = false;
+			//alert(tStatue);
+		}
+		//alert("tStatue::" + tStatue);
+	   /* $('*').click(function (e) {
+			e.stopPropagation();//停止冒泡
+			o = this;
+			alert(readXPath(o));
+		});*/
+		if(tStatue){
+		//alert("tStatue::" + tStatue);
+		 $('*').not("#checkStatus").mouseover(
+			 function (e) {
+				//alert("mouseover");
+				e.stopPropagation();//停止冒泡
+				o = this;
+				//alert(readXPath(o));
+				$('*').removeClass("tcurrent");
+				$(this).addClass("tcurrent");
+				//alert("test");
+				$(this).click(function(e){
+					//e.stopPropagation();//停止冒泡
+					//o = this;
+					alert(readXPath(o));
+				});
+			 }
+		 );
+	}else{
+	//	alert("tStatue::" + tStatue);
+		//$('*').stop();
+		location.reload();
+	}
+};
+
+function init() {
+    var xpath = '', o;	 	
+}
+
+</script>
+
+</head>
+
+
+<body onload="init();">
+<div id="checkStatus" class="tuncheck" onclick="checkStatus();">&nbsp;</div>
+<div>
+	<ul>
+		<li class="test1">
+			<ul>
+				<li>features</li>
+				<li>Cloud</li>
+				<li>Time-line</li>
+			</ul>
+		</li>
+		<li class="test2">content</li>
+		<li class="test2">testing</li>
+	<ul>
+</div>
+<div>
+	<ul>
+		<li id="1test">web</li>
+		<li id="2test">artisan</li>
+		<li id="3test">monitoring</li>
+	<ul>
+</div>
+</body>
+
+</html>
+

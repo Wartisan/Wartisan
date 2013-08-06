@@ -1,0 +1,71 @@
+@charset "utf-8";
+/* CSS Document */
+body, div, h4, ul, li {
+	margin: 0;
+	padding: 0;
+	color: #706E69;
+	background: #F6F5F4;
+	}
+#lroof {
+	height: 6px;
+	background: url(../images/bg_roof.jpg) repeat-x;
+	overflow: hidden;
+}
+h4, h5 {
+	font-weight: normal;
+	display: inline;	
+}
+#leftnav {
+	width: 244px;
+	/*border-right: 2px solid #C1BCB6;*/
+	background: #F6F5F4;
+}
+#leftnav .lnav {
+	position: relative;
+	width: 100%;
+	height: 44px;
+	line-height: 44px;
+	cursor: pointer;
+	background: url(../images/bg_nav1.jpg) repeat-x;
+	-moz-user-select: none;
+}
+#leftnav .lnav .nav_icon {
+	margin-left: 17px;
+	margin-right: 9px;
+}
+#leftnav .lnav .bg_nav1_bt {
+	position: absolute;
+	left: 7px;
+	top: 42px;
+}
+ul {
+	list-style-position: inside;
+	list-style-image:url(../images/nav_icon_small-12x12.png);
+}
+ul li {
+	padding-left: 50px;
+	height: 29px;
+	line-height: 29px;
+}
+ul li a {
+	text-decoration: none;
+	color: inherit;
+}
+.lnav_sub {
+	display: none;
+	-moz-user-select: none;
+}
+
+
+
+
+/*top style begin*/
+.scontainer{ height:76px; background:url(../images/stopbg.gif) repeat-x; position:relative;}
+.slogo{ width:376px; height:76px; background:url(../images/slogo.gif) no-repeat;}
+.snav{ position:absolute; right:20px; top:25px; height:25px; line-height:25px; background:#2474af; border:1px solid #4798d9; color:#fff;padding:2px 15px;}
+.snav a{ color:#fff; text-decoration:none; padding-left:20px; margin:0px 5px; }
+.snav a:hover{ color:#fff; text-decoration:underline;}
+.slock{ background:url(../images/slock.gif) 0 -1px no-repeat;}
+.slogout{ background:url(../images/sloginout.gif) 0 -1px no-repeat;}
+
+/*top style over*/
