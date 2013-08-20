@@ -1,0 +1,25 @@
+// used by EmptySidebar? i modifed with createrequest, but didn't use it. Because I start to follow ClickMap.
+
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://createrequest/skin/skin.css" type="text/css"?> 
+<!DOCTYPE createquest SYSTEM "chrome://createrequest/locale/translations.dtd">
+
+<overlay id="sample" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+		<script src="createRequest.js" />
+		
+		<menupopup id="menu_ToolsPopup"> 
+			<menuitem label="&startcreaterequest;" key="create-request-run-key" oncommand="createRequest.run()"/>
+		</menupopup>
+		
+		<keyset>
+			<key id="create-request-run-key" modifiers="accel alt shift" key="R" oncommand="createRequest.run()"/>
+		</keyset>
+		
+		<statusbar id="status-bar">
+			<statusbarpanel id="create-request-status-bar-icon" class="statusbarpanel-iconic" src="chrome://createrequest/skin/status-bar.png" tooltiptext="&startcreaterequest;" onclick="createRequest.run()" />
+		</statusbar>
+		
+		<toolbarpalette id="BrowserToolbarPalette">
+			<toolbarbutton id="create-request-toolbar-button" label="Create request" tooltiptext="&startcreaterequest;" oncommand="createRequest.run()"/>
+		</toolbarpalette>
+</overlay>

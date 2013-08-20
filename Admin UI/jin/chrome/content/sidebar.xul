@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<page id="createRequestSidebar"
+      xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+		onload='onLoadCreateRequestSidebar();'
+>
+        <script type="application/x-javascript" src="chrome://createrequest/content/jquery.js">//</script>
+	<script type="application/x-javascript" src="chrome://createrequest/content/requestuilibs.js" />
+	<script type="application/x-javascript" src="chrome://createrequest/content/createRequest.js" /> 
+	<script type="application/x-javascript" src="chrome://createrequest/content/helper.js" /> 
+	<script type="application/x-javascript" src="chrome://createrequest/content/listener.js"/>
+     <vbox id="fbContentBox">
+            <toolbarbutton label='test' oncommand="pass_xpath()"></toolbarbutton>
+    </vbox>
+
+	<browser id="createrequestBrowser" type="content" flex="1"/>
+	
+</page>

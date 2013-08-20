@@ -1,0 +1,12 @@
+#create-request-toolbar-button {
+	list-style-image: url("chrome://createrequest/skin/toolbar-large.png");
+}
+
+#create-request-status-bar-icon {
+	width: 30px;
+	margin: 0 5px;
+}
+
+.create-request-selected {
+	outline: 2px solid red !important;
+}

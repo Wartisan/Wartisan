@@ -1,0 +1,54 @@
+/* CSS Document */
+body, div, h3, ol, p, input {
+	margin: 0;
+	padding: 0;
+}
+#lpanel {
+	width: 350px;
+	height: 691px;
+	border: 1px solid #000000;
+}
+#lfunc {
+	height: 67px;
+	border-bottom: 1px solid #000000;
+	text-align: center;
+	line-height: 67px;
+}
+.lfunc {
+	width: 80px;
+	font-size: 15px;
+	height: 40px;
+}
+#lsubject {
+	height: 42px;
+	border-bottom: 1px solid #000000;
+	line-height: 42px;
+	padding-left: 10px;
+}
+#lmain {
+	height: 483px;
+	border-bottom: 1px solid #000000;
+}
+#lupditem {
+	list-style-position: inside;
+	display: table-cell;
+}
+#lupditem li {
+	width: 350px;
+	height: 120px;
+	line-height: 120px;
+	border-bottom: 1px solid #000000;
+}
+#ldate {
+	height: 50px;
+	border-bottom: 1px solid #000000;
+}
+#lcommit {
+	height: 49px;
+	line-height: 49px;
+	padding-left: 170px;
+}
+.lcommit {
+	width: 80px;
+	height: 30px;
+}

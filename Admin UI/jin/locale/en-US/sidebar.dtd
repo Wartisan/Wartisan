@@ -1,0 +1,5 @@
+<!ENTITY requestsidebar "Create/update request">
+<!ENTITY startcreaterequest "Wartisan CreateRequest">
+<!ENTITY requestsidebar.title "Wartisan CreateRequest">
+<!ENTITY openRequestSidebar.commandkey "E">
+<!ENTITY openRequestSidebar.modifierskey "shift accel">
