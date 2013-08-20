@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://createrequest/locale/sidebar.dtd">
+<overlay id="requestSidebarOverlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  
+  <script type="application/x-javascript" src="chrome://createrequest/content/createRequest.js" />
+  <script type="application/x-javascript" src="chrome://createrequest/content/initiator.js" />
+  <script type="application/x-javascript" src="chrome://createrequest/content/requestuilibs.js" />
+  <script type="application/x-javascript" src="chrome://createrequest/content/helper.js" /> 
+
+  <menupopup id="viewSidebarMenu">
+    <menuitem key="key_openRequestSidebar" observes="viewRequestSidebar"  />
+  </menupopup>
+  
+  <keyset id="mainKeyset">
+    <key id="key_openRequestSidebar" command="viewRequestSidebar"
+         key="&openRequestSidebar.commandkey;" 
+         modifiers="&openRequestSidebar.modifierskey;" />
+  </keyset>
+  
+  <broadcasterset id="mainBroadcasterSet"> 
+    <broadcaster id="viewRequestSidebar" 
+                 label="&requestsidebar.title;"
+                 autoCheck="false"
+                 type="checkbox"
+                 group="sidebar"
+                 sidebarurl="chrome://createrequest/content/sidebar.xul"
+                 sidebartitle="&requestsidebar.title;"
+                 oncommand="toggleCreateRequest(event);" />
+  </broadcasterset>
+</overlay>

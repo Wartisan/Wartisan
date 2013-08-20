@@ -1,0 +1,14 @@
+.tcurrent{
+	outline:1px solid red;
+}
+.tuncheck{
+	background:url(../image/checkbox.gif) no-repeat;
+}
+.tchecked{
+	background:url(../image/checkbox2.gif) no-repeat;
+}
+#checkStatus{
+	height:20px;
+	width:20px;
+	cursor:pointer;
+}
